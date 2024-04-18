@@ -5,7 +5,7 @@ class Shooter{
   
   // CONSTRUCTOR 
   public Shooter(){
-    imagen = loadImage("shooter.png");
+    imagen = loadImage("https://c0.klipartz.com/pngpicture/924/882/sticker-png-funko-pop-games-borderlands-clap-trap-action-figure-funko-pop-games-borderlands-clap-trap-action-figure-borderlands-black-claptrap-exc-pop-vinyl-figure-action-toy-figures-others-game-toy-technology-robot-action.png");
   }
   
   public void dibujar(){
