@@ -23,17 +23,17 @@ void setupImagenMoverRebote(String rutaRebote, float imgYalto, float velocidad) 
 // Dibuja y mueve la imagen
 void drawImagenMoverRebote() {
     // Dibuja la imagen en su posición actual
-    image(img2, imgX, imgY);
+    image(img2, imgX, -50);
     
     // Mueve la imagen en la dirección actual
-    imgX += speed;
+    imgX += speed*4;
     
     // Verifica si la imagen ha alcanzado los bordes izquierdo o derecho
-    if (imgX <= 0) {
+    if (imgX <= -50) {
         // La imagen llegó al borde izquierdo, cambia la dirección de movimiento a la derecha
-        imgX = 0;
+        imgX = -50;
         speed = abs(speed);
-    } else if (imgX + img2.width >= width) {
+    } else if (imgX + img2.width >= 900) {
         // La imagen llegó al borde derecho, cambia la dirección de movimiento a la izquierda
         imgX = width - img2.width;
         speed = -abs(speed);
