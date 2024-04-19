@@ -1,47 +1,24 @@
-private Shooter nave;
-private Asteroide rocaEspacial;
+void setup() {
+    size(800, 600);
+    
+    // Configura los elementos de la pestaña ImagenMoverRebote
+    setupImagenMoverRebote("descargar.png", 300, 2.0);
 
-public void setup(){
-  size(800,800);
-  nave = new Shooter(); 
-  //nave.posicion = new PVector(width/2,height/2);
-  //nave.velocidad = new PVector(10,10);
-  nave.setPosicion(new PVector(width/2,height/2));
-  nave.setVelocidad(new PVector(10,10));
-  
-  rocaEspacial = new Asteroide(new PVector(width/2,0),new PVector(0,10));
-  
+    // Configura los elementos de la pestaña ImagenMoverMouse
+    setupImagenMoverMouse("star.png", 100, 100);
+    
+    // Configura el fondo de la pestaña FondoLienzo
+   cargarFondo("park.jpg");
 }
-
-public void draw(){
-  background(0);
-  nave.dibujar();
-  actualizarVelocidadNave();
-  rocaEspacial.dibujar();
-  rocaEspacial.mover();
-}
-
-public void keyPressed(){
-  if(key=='d'){
-    nave.mover(1);
-  }
-  if(key=='a'){
-    nave.mover(0);
-  }
-  
-  if(key=='w'){
-    nave.mover(2);
-  }
-  if(key=='s'){
-    nave.mover(3);
-  }
-  
-}
-
-public void actualizarVelocidadNave(){
-  if(nave.getPosicion().x>(width/2)){
-    nave.getVelocidad().x=30;
-  }else{
-    nave.getVelocidad().x=10;
-  }
+void draw() {
+    // Dibuja el fondo
+    dibujarFondo();
+    
+    // Dibuja y maneja el movimiento de la imagen en ImagenMoverRebote
+    drawImagenMoverRebote();
+    
+    // Dibuja y maneja el movimiento de la imagen con el mouse en ImagenMoverMouse
+    drawImagenMoverMouse();
+    
+    // Aquí puedes agregar más código para otros elementos del lienzo si es necesario.
 }
