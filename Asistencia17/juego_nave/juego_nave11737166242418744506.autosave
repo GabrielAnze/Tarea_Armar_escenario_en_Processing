@@ -1,0 +1,41 @@
+void setup() {
+    // Configura el lienzo
+    size(800, 600);
+    
+    // Configura los elementos de la pestaña ImagenMoverRebote
+    setupImagenMoverRebote("sun.png", 100, 2.0);
+
+    // Configura los elementos de la pestaña ImagenMoverMouse
+    setupImagenMoverMouse("star.png", 100, 100);
+    
+    // Configura el fondo de la pestaña FondoLienzo
+    cargarFondo("park.jpg");
+}
+
+void draw() {
+    // Dibuja el fondo
+    dibujarFondo();
+    
+    // Dibuja y maneja el movimiento de la imagen en ImagenMoverRebote
+    drawImagenMoverRebote();
+    
+    // Dibuja y maneja el movimiento de la imagen con el mouse en ImagenMoverMouse
+    drawImagenMoverMouse();
+}
+
+// Funciones de manejo de eventos de mouse
+
+void mousePressed() {
+    // Llama a la función de mousePressed de ImagenMoverMouse
+    mousePressedImagenMoverMouse();
+}
+
+void mouseReleased() {
+    // Llama a la función de mouseReleased de ImagenMoverMouse
+    mouseReleasedImagenMoverMouse();
+}
+
+void mouseDragged() {
+    // Llama a la función de mouseDragged de ImagenMoverMouse
+    mouseDraggedImagenMoverMouse();
+}
